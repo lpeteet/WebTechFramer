@@ -66,11 +66,15 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
             select {
                 width: 200px;
             }
             
         </style>
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        
     </head>
     <body>
         <!-- <div class="flex-center position-ref full-height"> -->
@@ -82,52 +86,58 @@
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
-                    @endauth
++                    @endauth
                 </div>
             @endif
-
-<!--
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
- -->
         </div>
-        <div class="table-responsive">
-            <h2>SITES</h2>
-            <!-- <table id="site-data"  cellpadding="0" cellspacing="0" border="0" class="display" width="100%"> -->
-            <table id="site-data" class="table table-striped table-hover table-condensed">
+
+        <div class="content">
+
+            <h2>Sites<h2>
+
+            <!-- <table id="site-data" class="table table-striped table-hover table-condensed"> -->
+            <table id="site-data" cellpadding="0" cellspacing="0" border="0" class="display" width="50%">
                 <thead>
-                    <tr>
-                        <th>Site</th>
-                        <th>Name</th>
-                        <th>Owner</th>
-                        <th>Created</th>
-                        <th>Modified</th>
-                    </tr>
+                <tr>
+                    <th>Site</th>
+                    <th>Name</th>
+                    <th>Owner</th>
+                    <th>Created</th>
+                    <th>Modified</th>
+                </tr>
                 </thead>
                 <tbody>
-                    @foreach($records as $key => $data)
+                    @foreach($sites as $data)
                         <tr>
+                            <!-- <td>Inside ForEach!</td> -->
                             <td>{{$data->id}}</td>
-                            <td>{{$data->name}}</td>
-                            <td>{{$data->user_id}}</td>
+                            <td>{{$data->Name}}</td> 
                             <td>{{$data->created_at}}</td>
-                            <td>{{$data->updated_at}}</td>                 
+                            <td>{{$data->updated_at}}</td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
 
-        </div>
+            <p>That's All Folks!!</p>
+        </div> <!-- Content -->
+
+        <!-- Scripts -->
+        <script type="text/javascript" language="javascript"
+            src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"
+            integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"
+            integrity="sha256-BSsbXsDErniq/HpuhULFor8x1CpA2sPPwQLlEoEri+0="
+            crossorigin="anonymous">
+        </script>
+        <!--
+            Don't think I need this since above we have jquery core.js 
+            <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
+        -->
     </body>
 </html>
+
+

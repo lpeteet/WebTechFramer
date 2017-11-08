@@ -76,6 +76,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" language="javascript"
+        src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"
         integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
         crossorigin="anonymous"></script>
@@ -83,7 +86,9 @@
         integrity="sha256-BSsbXsDErniq/HpuhULFor8x1CpA2sPPwQLlEoEri+0="
         crossorigin="anonymous">
     </script>
-    <!-- <script type="text/javascript" language="javascript" src="js/jquery.js"></script> -->
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <!--
+        Don't think I need this since above we have jquery core.js 
+        <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
+     -->
 </body>
 </html>
