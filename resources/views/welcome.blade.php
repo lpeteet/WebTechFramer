@@ -99,27 +99,36 @@
             <table id="site-data" cellpadding="0" cellspacing="0" border="0" class="display" width="50%">
                 <thead>
                 <tr>
-                    <th>Site</th>
-                    <th>Name</th>
-                    <th>Owner</th>
-                    <th>Created</th>
-                    <th>Modified</th>
+                    <th width="10%" style="text-align:left">Site</th>
+                    <th width="40%" style="text-align:left">Name</th>
+                    <th width="20%" style="text-align:left">Owner</th>
+                    <th width="15%" style="text-align:left">Created</th>
+                    <th width="15%" style="text-align:left">Modified</th>
                 </tr>
                 </thead>
                 <tbody>
-                    @foreach($sites as $data)
+                    @if (empty($siteList))
+                        <tr>
+                            <td></td>
+                            <td>No Sites Generated Yet</td> 
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    @else
+                        @foreach($siteList as $data)
                         <tr>
                             <!-- <td>Inside ForEach!</td> -->
-                            <td>{{$data->id}}</td>
-                            <td>{{$data->Name}}</td> 
-                            <td>{{$data->created_at}}</td>
-                            <td>{{$data->updated_at}}</td>
+                            <td style="text-align:left">{{$data->id}}</td>
+                            <td style="text-align:left">{{$data->Name}}</td> 
+                            <td style="text-align:left">{{$data->created_at}}</td>
+                            <td style="text-align:left">{{$data->updated_at}}</td>
                         </tr>
-                    @endforeach
+                        @endforeach
+                    @endif                
                 </tbody>
             </table>
 
-            <p>That's All Folks!!</p>
+            <!-- <p>That's All Folks!!</p> -->
         </div> <!-- Content -->
 
         <!-- Scripts -->

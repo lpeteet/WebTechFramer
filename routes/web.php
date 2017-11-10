@@ -33,8 +33,18 @@ Route::get('/maint', function () {
     return view('viewName', ['var1'=>value1,'var2'=>value2,'var3'=>value3]);
  */
 
-    $records = DB::table('sites')->get();
-    Log::info('$records: '. $records);
-    return view('welcome', ['sites' => $records]);
+    $siteList = DB::table('sites')->get();
 
+    // if ($siteList->first()) { } 
+    // if (!$siteList->isEmpty()) { }
+    // if ($siteList->count()) { }
+    if (count($siteList)) {
+        Log::info('$siteList: '. $siteList);
+        return view('welcome', ['siteList' => $siteList]);
+        //OR return View::make('welcome')->with('siteList', $siteList);
+    } else {
+        Log::info("No Data Returned from DB::table('sites')");
+        
+    }
+ 
 });
